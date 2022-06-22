@@ -15,9 +15,16 @@ function guardarReserva() {
 
 
 function cancelarReserva() {
-    console.log(reserva)
-    reserva.estado = "Cancelada";
-    reserva.local.cupomax = reserva.local.cupomax + 1;
+    let idLocal = this.getAttribute("data-reserva");
+
+    if (select != null) {
+        for (let res of misReservas) {
+            console.log(idLocal)
+            if (res.id == idLocal) {
+                res.estado = "cancelado"
+            }
+        }
+    }
     mostrarEnReservas()
 }
 
@@ -53,6 +60,15 @@ function mostrarEnReservas() {
 
 
 function confirmarReserva() {
-    reserva.estado = "confirmada"
+    let idLocal = this.getAttribute("data-reserva");
+
+    if (select != null) {
+        for (let res of misReservas) {
+            console.log(idLocal)
+            if (res.id == idLocal) {
+                res.estado = "confirmado"
+            }
+        }
+    }
     mostrarEnReservas()
 }
