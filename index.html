@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reservas web</title>
+    <link href="css/global.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navigation-container">
+        <div class="navigation-left">
+          <a href="index.html" aria-current="page"
+            ><img src="images/Logo.svg" width="40" alt="logo"
+          /></a>
+        </div>
+        <div class="navigation-right">
+          <div class="menu-button w-nav-button">
+            <div class="icon w-icon-nav-menu"></div>
+          </div>
+
+          <nav id="nav-botones" class="nav-menu w-nav-menu">
+            <button class="button" id="btn-login">Iniciar sesión</button>
+            <button class="button" id="btn-signIn">Crear cuenta</button>
+          </nav>
+
+          <div id="nav-usuario" class="content-hidden">
+            <p id="texto-usuario"></p>
+            <button class="btn"><a href="/index.html">Cerrar sesión</a></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="Header" class="header">
+      <div class="container-flex">
+        <div class="hero-content">
+          <h1
+            style="
+              -webkit-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+            "
+            class="hero-h1"
+          >
+            Tus reservas <br />
+            <span class="brand-span">Web</span>.
+          </h1>
+          <p
+            style="
+              -webkit-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+            "
+            class="hero-paragraph"
+          >
+            Reservas web es el primer sitio a nivel nacional de reservas web.
+          </p>
+          <div
+            style="
+              -webkit-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(-25px, 0, 0) scale3d(1, 1, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+            "
+            class="review-wrap"
+          >
+            <div class="review-text">
+              Desde<span class="brand-span">2005</span> basados en la
+              experiencia
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img
+            class="img-hero"
+            src="/images/sofitel.jpg"
+            alt=""
+            style="
+              -webkit-transform: translate3d(0, 0, 0) scale3d(0.95, 0.95, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 0, 0) scale3d(0.95, 0.95, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 0, 0) scale3d(0.95, 0.95, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 0, 0) scale3d(0.95, 0.95, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+            "
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="contentUser" class="margins container content-hidden">
+      <div class="reser">
+        <h1>Mis reservas</h1>
+        <div role="listitem" class="menu-item">
+          <div class="card">
+            <a href="#" class="card-image-square w-inline-block"
+              ><img src="" alt="" class="card-image"
+            /></a>
+            <div  id="list" class="card-content">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-flex">
+        <img
+          src="images/YumYum.png"
+          style="
+            -webkit-transform: translate3d(0, 45px, 0) scale3d(1, 1, 1)
+              rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            -moz-transform: translate3d(0, 45px, 0) scale3d(1, 1, 1) rotateX(0)
+              rotateY(0) rotateZ(0) skew(0, 0);
+            -ms-transform: translate3d(0, 45px, 0) scale3d(1, 1, 1) rotateX(0)
+              rotateY(0) rotateZ(0) skew(0, 0);
+            transform: translate3d(0, 45px, 0) scale3d(1, 1, 1) rotateX(0)
+              rotateY(0) rotateZ(0) skew(0, 0);
+            opacity: 0;
+          "
+          sizes="(max-width: 767px) 100vw, 500px"
+          srcset="images/YumYum-p-500.png 500w, images/YumYum.png 515w"
+          alt=""
+          class="cursive-text"
+        />
+        <div class="title-wrap-centre">
+          <h1 class="header-h1">
+            Todas las <span class="brand-span">mejores</span>
+            <span class="brand-span">opciones</span> para ti.
+          </h1>
+        </div>
+      </div>
+      <div id="services">
+        <p id="state-in"></p>
+      </div>
+    </div>
+
+
+
+
+    <div class="content-section-bg">
+      <div class="container">
+        <div class="w-layout-grid content-grid">
+          <div class="content-block">
+            <h2>Siempre<br />Conectados</h2>
+            <p>
+              Descarga la app de reservasWeb. Contamos con servicio de google
+              maps, aunque estes sin conexion a internet.
+            </p>
+            <a href="#0" class="button button-space w-button"
+              >Click para obtener app</a
+            >
+          </div>
+          <div class="image-block"><img src="images/phone.png" alt="" /></div>
+        </div>
+      </div>
+    </div>
+
+  }
+
+    <div id="modal" class="close">
+      <div id="cruce">x</div>
+      <div class="title-wrap-centre">
+        <h2 class="modalTitle">Iniciar sesión</h2>
+        <input id="txt-usuario" type="text" placeholder="Nombre de usuario" />
+        <input id="txt-passwordLogin" type="password" placeholder="contraseña" />
+        <button class="button" id="btn-acceder">Acceder</button>
+        <p class="error" id="txt-errorLg"></p>
+      </div>
+    </div>
+
+    <div id="modal-signIn" class="close">
+      <div id="cruce2">x</div>
+      <div class="title-wrap-centre">
+        <h2 class="modalTitle">Registrarse</h2>
+        <input id="txt-nombreRg" type="text" placeholder=" Nombre" />
+        <input id="txt-usuarioRg" type="text" placeholder="Nombre de usuario" />
+        <input id="txt-contraseñaRg" type="password" placeholder="contraseña" />
+        <p id="text-errorRg" class="error"></p>
+        <button class="button" id="btn-registrarme">Registrarme</button>
+        <p  class="error" id="txt-errorRg"></p>
+        <p class="txt-correcto"></p>
+      </div>
+
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="w-layout-grid footer-grid">
+          <div
+            id="w-node-_67f7db32-28d2-9f37-8b84-a159dcc6da5a-dcc6da57"
+            class="footer-column"
+          >
+            <img src="images/Logo.svg" width="40" alt="" class="footer-logo" />
+            <p>
+              Reservas web &amp; Montevideo, uruguay<br />
+              contactenos.
+            </p>
+          </div>
+          <div
+            id="w-node-_67f7db32-28d2-9f37-8b84-a159dcc6da69-dcc6da57"
+            class="footer-column"
+          >
+            <p class="footer-link">+598 098 349 834</p>
+            <p class="footer-link">reservasweb@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-legal">
+          <div class="footer-detail-left">
+            <div class="legal">
+              Creado por
+              <p class="link">Carolain seija</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/structure.js"></script>
+    <script src="/js/globals.js"></script>
+    <script src="/js/reserver.js"></script>
+    <script src="/js/preload.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/register.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
