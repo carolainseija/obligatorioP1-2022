@@ -66,7 +66,7 @@ class Reserva {
     this.persona = persona;
     this.local = local;
     this.cupos = cupos; // cuantos quiero reservar
-    this.estado = "pendiente"; 
+    this.estado = "null"; 
   
   }
 }
