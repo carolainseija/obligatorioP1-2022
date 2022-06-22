@@ -1,7 +1,6 @@
 let arrayPersonas = [];
 let arrayReservas = [];
 let arrayLocal = [];
-let misReservas = [];
 
 let classContent = document.querySelector("#contentUser").classList;
 let classNavUsuario = document.querySelector("#nav-usuario").classList;
@@ -66,7 +65,7 @@ class Reserva {
     this.persona = persona;
     this.local = local;
     this.cupos = cupos; // cuantos quiero reservar
-    this.estado = "null"; 
+    this.estado = "pendiente"; 
   
   }
 }

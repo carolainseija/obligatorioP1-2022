@@ -71,8 +71,8 @@ function verLocales() {
 </div>
 </div>`}
     document.querySelector("#services").innerHTML = losLocales;
-    let allbtn = document.querySelectorAll(".btn-reservas");
-    for (let button of allbtn) {
+    let losBotones = document.querySelectorAll(".btn-reservas");
+    for (let button of losBotones) {
         button.addEventListener("click", guardarReserva)
     }
 }
