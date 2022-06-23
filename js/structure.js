@@ -1,6 +1,10 @@
 let arrayPersonas = [];
 let arrayReservas = [];
 let arrayLocal = [];
+let arrayConfirmadas = [];
+
+let reservasConfirmadas = document.querySelector("#reservasConfirmadas")
+let classreservasConfirmadas = reservasConfirmadas.classList;
 
 let classContent = document.querySelector("#contentUser").classList;
 let classContentLocal = document.querySelector("#contentLocal").classList;

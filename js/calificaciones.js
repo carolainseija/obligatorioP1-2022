@@ -37,6 +37,8 @@ function calificando() {
     numeros.push(valorUsuario)
     console.log("numeros", numeros)
     let califica = sumarCalificacion(numeros)
+    console.log("fun calificando")
+    console.log("onhgv2t")
     mostrarCalificacion(califica)
 }
 

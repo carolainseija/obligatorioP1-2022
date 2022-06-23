@@ -65,6 +65,12 @@ p {
   text-transform: none;
 }
 
+.card-confirmadas {
+  background-color: #c1ecbd;
+  width: 70%;
+  margin: 30px auto;
+}
+
 .title-wrap {
   display: -webkit-box;
   display: -webkit-flex;

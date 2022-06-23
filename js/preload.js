@@ -1,27 +1,27 @@
 Precargar()
 
 function Precargar() {
-    let persona1 = altaPersona("carolain", "caro", "contraseña")
-    let persona2 = altaPersona("Marcos", "marcos02", "contraseña2")
-    let persona3 = altaPersona("Romina", "romi", "romi12")
-    let persona4 = altaPersona("Marcos", "marcos", "contraseña2")
-    let persona5 = altaPersona("Maximiliano", "maxi", "Maxi22")
-    let persona6 = altaPersona("Marcos", "marcos02", "Marcos1")
-    let persona7 = altaPersona("rodri", "rodri", "Rodri12")
+    altaPersona("carolain", "caro", "contraseña")
+    altaPersona("Marcos", "marcos02", "contraseña2")
+    altaPersona("Romina", "romi", "romi12")
+    altaPersona("Marcos", "marcos", "contraseña2")
+    altaPersona("Maximiliano", "maxi", "Maxi22")
+    altaPersona("Marcos", "marcos02", "Marcos1")
+    altaPersona("rodri", "rodri", "Rodri12")
 
-    let reserva1 = altaReserva("persona", "local", "3", "pendiente")
-    let reserva2 = altaReserva("persona", "local", "2", "pendiente")
-    let reserva3 = altaReserva("persona", "local", "1", "pendiente")
+    altaReserva("persona", "local", "3", "pendiente")
+    altaReserva("persona", "local", "2", "pendiente")
+    altaReserva("persona", "local", "1", "pendiente")
 
-    let local1 = altaLocal("museo de la memoria", "museomemoria", "memoria452", "museo", " Av. de las Instrucciones 1057, 12900 Montevideo, Departamento de Montevideo", "40", "memoria.jpg", "true")
-    let local2 = altaLocal("blanes", "blanes", "blanes123", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
-    let local3 = altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
-    let local4 = altaLocal("galpon", "galpon", "teatrogal1", "teatro", " Av. 18 de Julio 1618, 11200 Montevideo, Departamento de Montevideo", "5", "galpon.jpg", "true")
-    let local5 = altaLocal("Hard rock café", "hard", "hard22", "restaurante", "Rbla. Armenia 1624, 11300 Montevideo", "15", "hard.jpg", "true")
-    let local6 = altaLocal("rumba bar", "rumba", "rumbabar122", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "10", "rumba.jpg", "true")
-    let local7 = altaLocal("Mc donals", "mcdonals", "cajitafeliz", "restaurante", "Bv. Gral. Artigas 1504 ·", "17", "mcdonals.webp", "true")
+    altaLocal("museo de la memoria", "museomemoria23", "memoria452", "museo", " Av. de las Instrucciones 1057, 12900 Montevideo, Departamento de Montevideo", "40", "memoria.jpg", "true")
+    altaLocal("blanes", " blanes", "blanes123", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
+    altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
+    altaLocal("galpon", "galpon", "teatrogal1", "teatro", " Av. 18 de Julio 1618, 11200 Montevideo, Departamento de Montevideo", "5", "galpon.jpg", "true")
+    altaLocal("Hard rock café", "hard", "hard22", "restaurante", "Rbla. Armenia 1624, 11300 Montevideo", "15", "hard.jpg", "true")
+    altaLocal("rumba", "rumba", "rumba123", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "10", "rumba.jpg", "true")
+    altaLocal("mc donals", "mcdonals", "cajitafeliz", "restaurante", "Bv. Gral. Artigas 1504 ·", "17", "mcdonals.webp", "true")
 
-    let local8 = altaLocal("sofitel Athens airport", "sofitel", "sofi", "hotel", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "30", "sofitel.jpg", "true")
+    altaLocal("sofitel", "hotel sofitel", "sofi122", "hotel", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "30", "sofitel.jpg", "true")
 
 }
 
@@ -66,7 +66,6 @@ function verLocales() {
     <img class="imagen" src="../images/${locales.foto}" alt="imagen de local" >
   </div>
   <div class="card-textos">
-  <div class="estrellas">Reservas</div>
     <h6>${locales.nombre}</h6>
     <p class="paragraph">${locales.direccion}</p>
     <select id="select">
@@ -85,11 +84,12 @@ function verLocales() {
     let losBotones = document.querySelectorAll(".btn-reservas");
     for (let button of losBotones) {
         button.addEventListener("click", guardarReserva)
-        for (res of arrayReservas) {
-            if (res.estado != "pendiente") {
-                button.disabled = true;
-            }
-        }
+        //la logica de desbilitar funciono pero para todos.
+        // for (res of arrayReservas) {
+        //     if (res.estado != "pendiente") {
+        //         button.disabled = true;
+        //     }
+        // }
     }
 }
 verLocales()

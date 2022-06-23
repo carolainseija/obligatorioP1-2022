@@ -3,7 +3,6 @@ function classes(vble, classe, classe2) {
     vble.add(classe2)
 }
 
-
 function newFunction(id, name) {
     document.querySelector(`#${id}`).addEventListener("click", name)
 }
@@ -14,7 +13,7 @@ function validar(texto, comparacion) {
     for (let i = 0; i < texto.length; i++) {
         if (texto.charAt(i) != comparacion && texto.length < 6) {
             validacion = false;
-        }else {
+        } else {
             validacion = true;
         }
     }
@@ -22,25 +21,21 @@ function validar(texto, comparacion) {
     return validacion;
 }
 
-//no es necesario pasar el usuario.
-function verificarExiste(name, password) {
+function verificarExiste(iUsuario, icontraseña) {
     let userencontrado = null;
     for (let persona of arrayPersonas) {
         //si encuentro que Array persona tiene person.name
-        if (persona.nombre == name && persona.contraseña == password) {
-            console.log("per.nom", persona.nombre)
-            console.log("name", name)
+        if (persona.nombre == iUsuario && persona.contraseña == icontraseña) {
             //una pocicion del array es igual a esta que declaraste en el input"
             userencontrado = persona;
         }
     }
     for (let local of arrayLocal) {
         //si encuentro que Array persona tiene person.name
-        if (local.nombre == name && local.contraseña == password) {
-            console.log("per.nom", local.nombre)
+        if (local.usuario == iUsuario && local.contraseña == icontraseña) {
             //una pocicion del array es igual a esta que declaraste en el input
             userencontrado = local;
-            
+
         }
     }
     return userencontrado;
@@ -68,4 +63,25 @@ function verificarType(name, password) {
 
 function msj(id, msj) {
     id.innerHTML = `${msj}`
+}
+
+function mostrarDisplayLocales(usuario) {
+    let losLocales = null;
+    for (local of arrayLocal) {
+        if (local.id == userLogin.id) {
+            console.log(local)
+            losLocales = `
+            <div>
+            <h6>
+            ${local.nombre}</h6>
+            <p>Dirección: ${local.direccion}</p>
+            <p>Tipo de local:${local.tipo}</p>
+            <p>Cupos maximo personas: ${local.cupomax}</p>
+            <p>${local.estado} habilitado para reservar</p>
+            <p>Mi contraseña: *****</p>
+            <div class="estrellass"></div>
+            </div>`
+        }
+    }
+    return document.querySelector("#miLocal").innerHTML = losLocales;
 }

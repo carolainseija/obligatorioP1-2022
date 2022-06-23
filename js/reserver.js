@@ -35,7 +35,7 @@ function mostrarEnReservas() {
     for (reserva of arrayReservas) {
         console.log("reeserva", reserva)
         if (reserva.persona.id == userLogin.id && reserva.estado == "pendiente") {
-            cadaReserva += 
+            cadaReserva +=
 
                 `
 <div class="menu-item">                  
@@ -45,25 +45,18 @@ function mostrarEnReservas() {
 <img class="imagen-reservas" src="../images/${reserva.local.foto}" alt="imagen de local" >
 </div>
 <div class="card-textos">
-<div class="estrellas">Reservas</div>
     <h6>${reserva.local.nombre}</h6>               
     <p class="paragraph">${reserva.local.direccion}</p>
-    /*esto va aparecer solo si se confirmo*/
- <select id="selectCalificador">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
- </select>
- <button id="btn-calificar">Calificar</button>
+    <p>${reserva.estado}</p>
                 <button class="btn btn-confirmar" id="btn-${reserva.id}" data-reserva="${reserva.id}">confirmar</button>
                 <button class="btn btn-cancelar" id="btn-${reserva.id}" data-reserva="${reserva.id}">Cancelar</button>
-    <p id="error-reserva"></p> 
+                <p id="error-reserva"></p> 
+                <div id="estrellas-er"></div>
 </div>
 </div>      
 </div>
 </div>`
+
 
             //ver esto porque ya esta debajo
             let botoneslim = document.querySelector("#botones-reservas")
@@ -99,12 +92,45 @@ function confirmarReserva() {
         for (let res of arrayReservas) {
             if (res.id == idLocal) {
                 res.estado = "confirmado"
+                arrayConfirmadas.push(res)
             }
         }
     }
     mostrarEnReservas()
+    mostrarConfirmadas()
 }
 
 
+function mostrarConfirmadas() {
+    classes(classreservasConfirmadas, "content-hidden", "content")
 
-// function para el raiting
+    let cadaReservaConfirmada = "";
+    for (reserva of arrayConfirmadas) {
+        console.log("cada reser")
+
+        console.log("reeserva confirm?", reserva)
+        cadaReservaConfirmada +=
+            `
+ <div class="menu-item">                  
+         <h6>${reserva.local.nombre}</h6>               
+    <p class="paragraph">${reserva.local.direccion}</p>
+         <p>${reserva.estado}</p>
+         <select id="selectCalificador">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+         </select>
+         <button id="btn-calificar">Calificar</button>
+ </div>`
+
+
+        botonesCalificar = document.querySelectorAll("#btn-calificar");
+
+        for (btnCali of botonesCalificar) {
+            btnCali.addEventListener("click", calificando)
+        }
+        reservasConfirmadas.innerHTML = cadaReservaConfirmada;
+    }
+}
