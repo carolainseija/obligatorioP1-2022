@@ -65,8 +65,8 @@ function msj(id, msj) {
     id.innerHTML = `${msj}`
 }
 
-function mostrarDisplayLocales(usuario) {
-    let losLocales = null;
+function mostrarDisplayLocales() {
+    let LocalLogueado = null;
     for (local of arrayLocal) {
         if (local.id == userLogin.id) {
             console.log(local)
@@ -77,11 +77,24 @@ function mostrarDisplayLocales(usuario) {
             <p>Dirección: ${local.direccion}</p>
             <p>Tipo de local:${local.tipo}</p>
             <p>Cupos maximo personas: ${local.cupomax}</p>
+            <button id="btn-cupos">cambiar cupos</button>
             <p>${local.estado} habilitado para reservar</p>
+            <button id="btn-deshabilitar">deshabilitar</button>
             <p>Mi contraseña: *****</p>
             <div class="estrellass"></div>
             </div>`
+
         }
     }
-    return document.querySelector("#miLocal").innerHTML = losLocales;
+    document.querySelector("#miLocal").innerHTML = LocalLogueado;
+    newFunction("btn-deshabilitar", desabilitar)
+    // newFunction("btn-cupos", ajustarCupos)
+    return LocalLogueado
+}
+
+
+function desabilitar() {
+    userLogin.estado = false;
+    console.log(userLogin.estado)
+    mostrarDisplayLocales()
 }

@@ -77,15 +77,15 @@ function mostrarEnReservas() {
         }
 
         botonesCalificar = document.querySelectorAll("#btn-calificar");
-        for (btnCali of botonesCalificar) {
+        for (let btnCali of botonesCalificar) {
             btnCali.addEventListener("click", calificando)
         }
     }
     verLocales()
 }
 
-
 function confirmarReserva() {
+
     let idLocal = this.getAttribute("data-reserva");
 
     if (select != null) {
@@ -105,7 +105,7 @@ function mostrarConfirmadas() {
     classes(classreservasConfirmadas, "content-hidden", "content")
 
     let cadaReservaConfirmada = "";
-    for (reserva of arrayConfirmadas) {
+    for (let reserva of arrayConfirmadas) {
         console.log("cada reser")
 
         console.log("reeserva confirm?", reserva)
@@ -122,13 +122,13 @@ function mostrarConfirmadas() {
             <option value="4">4</option>
             <option value="5">5</option>
          </select>
-         <button id="btn-calificar">Calificar</button>
+         <button   id="btn-calificar">Calificar</button>
  </div>`
 
 
         botonesCalificar = document.querySelectorAll("#btn-calificar");
 
-        for (btnCali of botonesCalificar) {
+        for (let btnCali of botonesCalificar) {
             btnCali.addEventListener("click", calificando)
         }
         reservasConfirmadas.innerHTML = cadaReservaConfirmada;
