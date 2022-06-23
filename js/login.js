@@ -10,8 +10,15 @@ function eventsLogin() {
   let password = document.querySelector("#txt-passwordLogin").value;
   let encontrado = verificarExiste(usuario, password);
 
-  if (encontrado != null) {
+  if (encontrado != null ) {
+    if ( encontrado = "persona"){
+      console.log("mo")
+    }else {
+      console.log("si")
+    }
     userLogin = encontrado;
+    console.log("juse", userLogin)
+    console.log("encin", encontrado )
     mostrarDisplayuser();
   } else {
     msj(idParrafo, "El usuario y/o la contraseña no son válidos")

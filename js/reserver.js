@@ -33,38 +33,42 @@ function cancelarReserva() {
 function mostrarEnReservas() {
     let cadaReserva = "";
     for (reserva of arrayReservas) {
-
+        console.log("reeserva", reserva)
         if (reserva.persona.id == userLogin.id && reserva.estado == "pendiente") {
-            cadaReserva += `
-          <div class="menu-item">                  
+            cadaReserva += 
+
+                `
+<div class="menu-item">                  
 <div class="card">
-  <a href="#" class="card-image-square w-inline-block"><img src="" alt="" class="card-image"></a>
-  <div class="card-content">
-    <a href="#" class="title-wrap w-inline-block">
-    <p>${reserva.local.nombre}</p>
-    <p>${reserva.estado}</p>
-    <p>Lugares ${reserva.cupos}</p>
-      <div id="estrellas" class="price">calificacion: </div>
-    </a>
-    <p class="paragraph">${reserva.direccion}</p>
+<div class="card-content">
+<div>
+<img class="imagen-reservas" src="../images/${reserva.local.foto}" alt="imagen de local" >
+</div>
+<div class="card-textos">
+<div class="estrellas">Reservas</div>
+    <h6>${reserva.local.nombre}</h6>               
+    <p class="paragraph">${reserva.local.direccion}</p>
     /*esto va aparecer solo si se confirmo*/
-    <select id="selectCalificador">
+ <select id="selectCalificador">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
-  </select>
-  <button id="btn-calificar">Calificar</button>
-    <div class="add-to-cart">
-    <div id="botones-reservas">
-    <button class="btn btn-confirmar" id="btn-${reserva.id}" data-reserva="${reserva.id}">confirmar</button>
-    <button class="btn btn-cancelar" id="btn-${reserva.id}" data-reserva="${reserva.id}">Cancelar</button>
-    </div>
+ </select>
+ <button id="btn-calificar">Calificar</button>
+                <button class="btn btn-confirmar" id="btn-${reserva.id}" data-reserva="${reserva.id}">confirmar</button>
+                <button class="btn btn-cancelar" id="btn-${reserva.id}" data-reserva="${reserva.id}">Cancelar</button>
+    <p id="error-reserva"></p> 
 </div>
 </div>      
 </div>
-</div> `
+</div>`
+
+
+
+
+
             //ver esto porque ya esta debajo
             let botoneslim = document.querySelector("#botones-reservas")
             if (reserva.estado == "Cancelada") {

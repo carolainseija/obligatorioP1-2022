@@ -7,8 +7,8 @@ function Precargar() {
     let r1 = altaReserva("persona", "local", "3", "pendiente")
     let r2 = altaReserva("persona", "local", "2", "pendiente")
     let r3 = altaReserva("persona", "local", "1", "pendiente")
-
-    let l1 = altaLocal("museo america", "museodeamerica", "contraeñaamerica", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
+                       //nomb,                usu,           contra           tipo       direcc                                                          cupos   foto        estado            
+    let l1 = altaLocal("america", "america", "america", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
     let a2 = altaLocal("rumbabar", "rumbabar", "rumbabar", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "3", "rumba.jpg", "true")
     let a3 = altaLocal("sofitel Athens airport", "sofitel", "sofi", "restaurante", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "3", "sofitel.jpg", "true")
     let a4 = altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
@@ -50,19 +50,19 @@ function verLocales() {
         losLocales += `
 <div class="menu-item">                  
 <div class="card">
-  <a href="#" class="card-image-square w-inline-block"><img src="" alt="" class="card-image"></a>
   <div class="card-content">
-    <a href="#" class="title-wrap w-inline-block">
-      <h6>${locales.nombre}</h6>
-      <div class="price">Reservas</div>
-    </a>
+  <div>
+    <img class="imagen" src="../images/${locales.foto}" alt="imagen de local" >
+  </div>
+  <div class="card-textos">
+  <div class="estrellas">Reservas</div>
+    <h6>${locales.nombre}</h6>
     <p class="paragraph">${locales.direccion}</p>
     <select id="select">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     </select>
-    <div class="add-to-cart">
     <p class="advertencia">solo quedan ${locales.cupomax} lugares!</p>
     <input type="button" class="btn-reservas" id="btn${locales.id}" data-local="${locales.id}" value="Reservar ahora">
     <p id="error-reserva"></p> 
@@ -74,8 +74,8 @@ function verLocales() {
     let losBotones = document.querySelectorAll(".btn-reservas");
     for (let button of losBotones) {
         button.addEventListener("click", guardarReserva)
-        for (res of arrayReservas){
-            if (res.estado != "pendiente"){
+        for (res of arrayReservas) {
+            if (res.estado != "pendiente") {
                 button.disabled = true;
             }
         }

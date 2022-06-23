@@ -479,9 +479,7 @@ button {
 }
 
 .card {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  /* background-color: #28224b; */
   display: flex;
   min-height: 200px;
   padding: 25px;
@@ -498,21 +496,39 @@ button {
   transition: border-color 300ms ease;
 }
 
-.price {
+.estrellas {
+  width: 100%;
+  height: auto;
   color: #35b8be;
   font-size: 16px;
   font-weight: 400;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-.card-content {
-  width: 100%;
+.card-textos {
+  width: 80%;
+  padding: 30px;
+  margin: 0px auto;
+}
+
+.imagen {
+  width: 20vw;
+  height: 100%;
+}
+.imagen-reservas {
+  width: 200px;
+  height: 130px;
 }
 
 .header {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   padding: 100px 3% 140px;
