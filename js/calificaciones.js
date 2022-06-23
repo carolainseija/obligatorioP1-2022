@@ -35,6 +35,3 @@ function calificando() {
     let califica = sumarCalificacion(numeros)
     mostrarCalificacion(califica)
 }
-
-
-

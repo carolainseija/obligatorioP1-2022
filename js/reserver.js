@@ -56,7 +56,6 @@ function mostrarEnReservas() {
             }
         }
         idDivReserva.innerHTML = cadaReserva;
-
         botonesConfirmar = document.querySelectorAll(".btn-confirmar");
         for (boton of botonesConfirmar) {
             boton.addEventListener("click", confirmarReserva)
@@ -76,9 +75,7 @@ function mostrarEnReservas() {
 }
 
 function confirmarReserva() {
-
     let idLocal = this.getAttribute("data-reserva");
-
     if (select != null) {
         for (let res of arrayReservas) {
             if (res.id == idLocal) {
@@ -94,12 +91,10 @@ function confirmarReserva() {
 
 function mostrarConfirmadas() {
     classes(classreservasConfirmadas, "content-hidden", "content")
-
     let cadaReservaConfirmada = "";
     for (let reserva of arrayConfirmadas) {
         cadaReservaConfirmada +=
             `
-
  <div class="card">                  
          <h6>${reserva.local.nombre}</h6>               
     <p class="paragraph">${reserva.local.direccion}</p>
@@ -113,7 +108,6 @@ function mostrarConfirmadas() {
          </select>
          <button class="btn"  id="btn-calificar">Calificar</button>
  </div>`
-
         botonesCalificar = document.querySelectorAll("#btn-calificar");
         for (let btnCali of botonesCalificar) {
             btnCali.addEventListener("click", calificando)

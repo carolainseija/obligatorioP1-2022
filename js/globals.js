@@ -73,13 +73,12 @@ function mostrarDisplayLocales() {
             <p>Mi contraseña: *****</p>
             <div class="estrellass"></div>
             </div>`
-
         }
     }
     document.querySelector("#miLocal").innerHTML = LocalLogueado;
     newFunction("btn-deshabilitar", desabilitar)
     newFunction("btn-vcupos", ajusteCupos)
-    let ii = verPromedios(userLogin)
+    // verPromedios()
     return LocalLogueado
 }
 
@@ -91,12 +90,14 @@ function desabilitar() {
 
 function ajusteCupos() {
     userLogin.cupomax = "3";
-
     mostrarDisplayLocales()
 }
 
 
-function verPromedios(userLogin) {
+document.querySelector("#promedios").addEventListener("click", btn-promedios)
+
+function verPromedios() {
+    console.log(userLogin)
     let reservasPendientes = 1;
     let cantidad = userLogin.cupo;
     console.log("max", cupomax)
@@ -109,4 +110,3 @@ function verPromedios(userLogin) {
     }
     return reservasPendientes;
 }
-
