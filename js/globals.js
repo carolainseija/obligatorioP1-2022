@@ -70,7 +70,7 @@ function mostrarDisplayLocales() {
     for (local of arrayLocal) {
         if (local.id == userLogin.id) {
             console.log(local)
-            losLocales = `
+            LocalLogueado = `
             <div>
             <h6>
             ${local.nombre}</h6>
