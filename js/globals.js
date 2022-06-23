@@ -20,6 +20,17 @@ function validar(texto, comparacion) {
     return validacion;
 }
 
+function For(bus1, bus2 arrayIndex) {
+    let busqueda = null;
+    for (let index of arrayIndex) {
+        if (index.`${bus1}` == bus1 && index.`${bus2}` == bus2) {
+            return true;
+        }
+    }
+    return busqueda;
+}
+
+
 function verificarExiste(iUsuario, icontraseña) {
     let userencontrado = null;
     for (let persona of arrayPersonas) {
@@ -30,7 +41,6 @@ function verificarExiste(iUsuario, icontraseña) {
     for (let local of arrayLocal) {
         if (local.usuario == iUsuario && local.contraseña == icontraseña) {
             userencontrado = local;
-
         }
     }
     return userencontrado;
@@ -38,11 +48,7 @@ function verificarExiste(iUsuario, icontraseña) {
 
 let userType = null;
 function verificarType(name, password) {
-    for (let persona of arrayPersonas) {
-        if (persona.nombre == name && persona.contraseña == password) {
-            userType = "persona";
-        }
-    }
+    For(usuaio, contraseña, arrayPersonas)
     for (let local of arrayLocal) {
         if (local.nombre == name && local.contraseña == password) {
             userType = "local";
@@ -78,10 +84,8 @@ function mostrarDisplayLocales() {
     document.querySelector("#miLocal").innerHTML = LocalLogueado;
     newFunction("btn-deshabilitar", desabilitar)
     newFunction("btn-vcupos", ajusteCupos)
-    // verPromedios()
     return LocalLogueado
 }
-
 
 function desabilitar() {
     userLogin.estado = false;
@@ -91,22 +95,4 @@ function desabilitar() {
 function ajusteCupos() {
     userLogin.cupomax = "3";
     mostrarDisplayLocales()
-}
-
-
-document.querySelector("#promedios").addEventListener("click", btn-promedios)
-
-function verPromedios() {
-    console.log(userLogin)
-    let reservasPendientes = 1;
-    let cantidad = userLogin.cupo;
-    console.log("max", cupomax)
-    for (let res of arrayReservas) {
-        if (res.local.id == userLogin.id) {
-            console.log("coincide")
-            arrayReservas + 1;
-            console.log(reservasPendientes)
-        }
-    }
-    return reservasPendientes;
 }
