@@ -88,6 +88,7 @@ function mostrarDisplayLocales() {
     }
     document.querySelector("#miLocal").innerHTML = LocalLogueado;
     newFunction("btn-deshabilitar", desabilitar)
+    newFunction("btn-vcupos", ajusteCupos)
     // newFunction("btn-cupos", ajustarCupos)
     return LocalLogueado
 }
@@ -98,3 +99,23 @@ function desabilitar() {
     console.log(userLogin.estado)
     mostrarDisplayLocales()
 }
+
+function ajusteCupos() {
+    userLogin.cupomax = "3";
+    console.log(userLogin.cupomax)
+    mostrarDisplayLocales()
+}
+
+
+function verPromedios(){
+  let reservasPendientes = 0;
+  let cantidad = null;
+  for (let res of arrayReservas){
+    if (res.local.id == userLogin.id){
+        arrayReservas++
+    }
+console.log(reservasPendientes)
+  }
+}
+
+verPromedios()

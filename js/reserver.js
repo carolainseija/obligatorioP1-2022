@@ -1,5 +1,5 @@
 
-
+mostrarEnReservas()
 function guardarReserva() {
     let idLocal = this.getAttribute("data-local");
 
@@ -111,7 +111,8 @@ function mostrarConfirmadas() {
         console.log("reeserva confirm?", reserva)
         cadaReservaConfirmada +=
             `
- <div class="menu-item">                  
+
+ <div class="card">                  
          <h6>${reserva.local.nombre}</h6>               
     <p class="paragraph">${reserva.local.direccion}</p>
          <p>${reserva.estado}</p>
@@ -122,7 +123,7 @@ function mostrarConfirmadas() {
             <option value="4">4</option>
             <option value="5">5</option>
          </select>
-         <button   id="btn-calificar">Calificar</button>
+         <button class="btn"  id="btn-calificar">Calificar</button>
  </div>`
 
 

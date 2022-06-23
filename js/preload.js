@@ -8,10 +8,15 @@ function Precargar() {
     altaPersona("Maximiliano", "maxi", "Maxi22")
     altaPersona("Marcos", "marcos02", "Marcos1")
     altaPersona("rodri", "rodri", "Rodri12")
+    altaPersona("laura", "laura", "laura123")
 
-    altaReserva("persona", "local", "3", "pendiente")
-    altaReserva("persona", "local", "2", "pendiente")
-    altaReserva("persona", "local", "1", "pendiente")
+    altaReserva(persona = { nombre: "rodri", usuario: "rodri", id: "7" }, local = { nombre: "rumba", usuario: "rumba", id: "6", direccion: "Dr. Héctor Miranda 2427", foto: "rumba.jpg", }, "10", "pendiente")
+    altaReserva(persona = { nombre: "Marcos", usuario: "Marcos", id: "4" }, local = { nombre: "galpon", usuario: "galpon", id: "4", direccion: " Av. 18 de Julio 1618,", foto: "galpon.jpg" }, "10", "pendiente")
+    altaReserva(persona = { nombre: "caro", usuario: "caro", id: "1" }, local = { nombre: "blanes", usuario: "blanes", id: "2", direccion: "Av. Millán 4015", foto: "blanes.jpg" }, "10", "pendiente")
+
+    altaReserva(persona = { nombre: "laura", usuario: "laura", id: "8" }, local = { nombre: "rumba", usuario: "rumba", id: "6", direccion: "Dr. Héctor Miranda 2427", foto: "rumba.jpg", }, "10", "completa")
+    altaReserva(persona = { nombre: "Marcos", usuario: "Marcos", id: "4" }, local = { nombre: "galpon", usuario: "galpon", id: "4", direccion: " Av. 18 de Julio 1618,", foto: "galpon.jpg" }, "10", "completa")
+
 
     altaLocal("museo de la memoria", "museomemoria23", "memoria452", "museo", " Av. de las Instrucciones 1057, 12900 Montevideo, Departamento de Montevideo", "40", "memoria.jpg", "true")
     altaLocal("blanes", " blanes", "blanes123", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")

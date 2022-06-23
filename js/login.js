@@ -44,6 +44,7 @@ function displayusuario() {
   classNav.add("content-hidden")
   classes(classNavUsuario, "content-hidden", "content")
   classes(classContentLocal, "content-hidden", "content")
+  mostrarEnReservas()
   textoUsuario.innerHTML = "Usuario: " + " " + userLogin.nombre;
 }
 
