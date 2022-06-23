@@ -54,9 +54,9 @@ p {
   letter-spacing: -0.02em;
 }
 #selectCalificador {
- width: 60px;
- height: 40px;
- margin: 30px;
+  width: 60px;
+  height: 40px;
+  margin: 30px;
 }
 #reservasConfirmadas {
   width: 70%;

@@ -17,23 +17,18 @@ function validar(texto, comparacion) {
             validacion = true;
         }
     }
-    console.log(validacion)
     return validacion;
 }
 
 function verificarExiste(iUsuario, icontraseña) {
     let userencontrado = null;
     for (let persona of arrayPersonas) {
-        //si encuentro que Array persona tiene person.name
         if (persona.nombre == iUsuario && persona.contraseña == icontraseña) {
-            //una pocicion del array es igual a esta que declaraste en el input"
             userencontrado = persona;
         }
     }
     for (let local of arrayLocal) {
-        //si encuentro que Array persona tiene person.name
         if (local.usuario == iUsuario && local.contraseña == icontraseña) {
-            //una pocicion del array es igual a esta que declaraste en el input
             userencontrado = local;
 
         }
@@ -44,16 +39,12 @@ function verificarExiste(iUsuario, icontraseña) {
 let userType = null;
 function verificarType(name, password) {
     for (let persona of arrayPersonas) {
-        //si encuentro que Array persona tiene person.name
         if (persona.nombre == name && persona.contraseña == password) {
-            //una pocicion del array es igual a esta que declaraste en el input"
             userType = "persona";
         }
     }
     for (let local of arrayLocal) {
-        //si encuentro que Array persona tiene person.name
         if (local.nombre == name && local.contraseña == password) {
-            //una pocicion del array es igual a esta que declaraste en el input
             userType = "local";
         }
     }
@@ -69,7 +60,6 @@ function mostrarDisplayLocales() {
     let LocalLogueado = null;
     for (local of arrayLocal) {
         if (local.id == userLogin.id) {
-            console.log(local)
             LocalLogueado = `
             <div>
             <h6>
@@ -89,33 +79,34 @@ function mostrarDisplayLocales() {
     document.querySelector("#miLocal").innerHTML = LocalLogueado;
     newFunction("btn-deshabilitar", desabilitar)
     newFunction("btn-vcupos", ajusteCupos)
-    // newFunction("btn-cupos", ajustarCupos)
+    let ii = verPromedios(userLogin)
     return LocalLogueado
 }
 
 
 function desabilitar() {
     userLogin.estado = false;
-    console.log(userLogin.estado)
     mostrarDisplayLocales()
 }
 
 function ajusteCupos() {
     userLogin.cupomax = "3";
-    console.log(userLogin.cupomax)
+
     mostrarDisplayLocales()
 }
 
 
-function verPromedios(){
-  let reservasPendientes = 0;
-  let cantidad = null;
-  for (let res of arrayReservas){
-    if (res.local.id == userLogin.id){
-        arrayReservas++
+function verPromedios(userLogin) {
+    let reservasPendientes = 1;
+    let cantidad = userLogin.cupo;
+    console.log("max", cupomax)
+    for (let res of arrayReservas) {
+        if (res.local.id == userLogin.id) {
+            console.log("coincide")
+            arrayReservas + 1;
+            console.log(reservasPendientes)
+        }
     }
-console.log(reservasPendientes)
-  }
+    return reservasPendientes;
 }
 
-verPromedios()

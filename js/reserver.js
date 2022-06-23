@@ -1,13 +1,10 @@
-
 mostrarEnReservas()
 function guardarReserva() {
     let idLocal = this.getAttribute("data-local");
-
     let cantidad = document.querySelector("#select").value;
     if (select != null) {
         for (let locales of arrayLocal) {
             if (locales.id == idLocal) {
-                console.log("cupo max", locales.cupomax)
                 locales.cupomax = locales.cupomax - cantidad;
                 altaReserva(userLogin, locales, cantidad, "pendiente");
             }
@@ -33,32 +30,26 @@ function cancelarReserva() {
 function mostrarEnReservas() {
     let cadaReserva = "";
     for (reserva of arrayReservas) {
-        console.log("reeserva", reserva)
         if (reserva.persona.id == userLogin.id && reserva.estado == "pendiente") {
-            cadaReserva +=
-
-                `
-<div class="menu-item">                  
-<div class="card">
-<div class="card-content">
-<div>
-<img class="imagen-reservas" src="../images/${reserva.local.foto}" alt="imagen de local" >
-</div>
-<div class="card-textos">
-    <h6>${reserva.local.nombre}</h6>               
-    <p class="paragraph">${reserva.local.direccion}</p>
-    <p>${reserva.estado}</p>
+            cadaReserva += `
+            <div class="menu-item">                  
+            <div class="card">
+            <div class="card-content">
+            <div>
+            <img class="imagen-reservas" src="../images/${reserva.local.foto}" alt="imagen de local" >
+            </div>
+            <div class="card-textos">
+                <h6>${reserva.local.nombre}</h6>               
+                <p class="paragraph">${reserva.local.direccion}</p>
+                <p>${reserva.estado}</p>
                 <button class="btn btn-confirmar" id="btn-${reserva.id}" data-reserva="${reserva.id}">confirmar</button>
                 <button class="btn btn-cancelar" id="btn-${reserva.id}" data-reserva="${reserva.id}">Cancelar</button>
                 <p id="error-reserva"></p> 
                 <div id="estrellas-er"></div>
-</div>
-</div>      
-</div>
-</div>`
-
-
-            //ver esto porque ya esta debajo
+            </div>
+            </div>      
+            </div>
+            </div>`
             let botoneslim = document.querySelector("#botones-reservas")
             if (reserva.estado == "Cancelada") {
                 botoneslim.innerHTML = `<p>kjfsd</p>`
@@ -106,9 +97,6 @@ function mostrarConfirmadas() {
 
     let cadaReservaConfirmada = "";
     for (let reserva of arrayConfirmadas) {
-        console.log("cada reser")
-
-        console.log("reeserva confirm?", reserva)
         cadaReservaConfirmada +=
             `
 
@@ -126,9 +114,7 @@ function mostrarConfirmadas() {
          <button class="btn"  id="btn-calificar">Calificar</button>
  </div>`
 
-
         botonesCalificar = document.querySelectorAll("#btn-calificar");
-
         for (let btnCali of botonesCalificar) {
             btnCali.addEventListener("click", calificando)
         }

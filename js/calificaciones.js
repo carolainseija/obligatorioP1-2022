@@ -19,13 +19,11 @@ function mostrarCalificacion(calificacion) {
     let valorMedio = 5 * personasCalificaron / 2;
     let valorChico = 5 * personasCalificaron / 3
     if (calificacion >= valorIdeal) {
-        console.log("tres estrellas")
         estrellas.innerHTML = `<div><img src="../images/estrella.svg" alt="estrellas"><img src="../images/estrella.svg" alt="estrellas"><img src="../images/estrella.svg" alt="estrellas"></div>`
     } else if (calificacion > valorMedio && calificacion < valorIdeal) {
-        console.log("2 estrellas")
         estrellas.innerHTML = `<div><img src="../images/estrella.svg" alt="estrellas"><img src="../images/estrella.svg" alt="estrellas"></div>`
     } else if (calificacion <= valorChico) {
-        console.log("1 estrella")
+
         estrellas.innerHTML = `<div><img src="../images/estrella.svg" alt="estrellas"></div>`
     }
 }
@@ -33,12 +31,8 @@ function mostrarCalificacion(calificacion) {
 
 function calificando() {
     let valorUsuario = document.querySelector("#selectCalificador").value;
-    console.log("llega la funcion")
     numeros.push(valorUsuario)
-    console.log("numeros", numeros)
     let califica = sumarCalificacion(numeros)
-    console.log("fun calificando")
-    console.log("onhgv2t")
     mostrarCalificacion(califica)
 }
 

@@ -8,11 +8,8 @@ function eventsLogin() {
   let usu = document.querySelector("#txt-usuarioLogin").value;
   let usuario = usu.toLowerCase();
   let password = document.querySelector("#txt-passwordLogin").value;
-  console.log("input name", usuario)
-  console.log("input contr", password)
   let encontrado = verificarExiste(usuario, password);
   tipo = verificarType(usuario, password);
-  console.log("el tipo es", tipo)
   if (encontrado != null) {
     userLogin = encontrado;
     if (tipo == "persona") {
@@ -28,8 +25,6 @@ function eventsLogin() {
 
 
 function displaylocal() {
-
-  console.log("display lcal")
   classes(classContent, "content-hidden", "content")
   classes(classModalLogin, "open", "close")
   classNav.add("content-hidden")
@@ -38,8 +33,6 @@ function displaylocal() {
   mostrarDisplayLocales(userLogin)
 }
 function displayusuario() {
-  console.log("display user")
-
   classes(classModalLogin, "open", "close")
   classNav.add("content-hidden")
   classes(classNavUsuario, "content-hidden", "content")

@@ -49,7 +49,7 @@ function altaReserva(nombre, estado, cupos, promedio) {
     }
     return reserva;
 }
-//estado tru del lñocal boton no disabled
+
 function altaLocal(nombre, usuario, contraseña, tipo, direccion, cupomax, foto, estado) {
     let local = " ";
     if (nombre != " " & usuario != " " & contraseña != " " & tipo != " " & direccion != " " && cupomax != " " && foto != " " && estado != " ") {
@@ -78,7 +78,6 @@ function verLocales() {
     <option value="2">2</option>
     <option value="3">3</option>
     </select>
-    <p class="advertencia">solo quedan ${locales.cupomax} lugares!</p>
     <input type="button" class="btn-reservas" id="btn${locales.id}" data-local="${locales.id}" value="Reservar ahora">
     <p id="error-reserva"></p> 
 </div>
@@ -89,12 +88,6 @@ function verLocales() {
     let losBotones = document.querySelectorAll(".btn-reservas");
     for (let button of losBotones) {
         button.addEventListener("click", guardarReserva)
-        //la logica de desbilitar funciono pero para todos.
-        // for (res of arrayReservas) {
-        //     if (res.estado != "pendiente") {
-        //         button.disabled = true;
-        //     }
-        // }
     }
 }
 verLocales()
