@@ -1,17 +1,28 @@
 Precargar()
 
 function Precargar() {
-    let p1 = altaPersona("carolain", "caro", "contraseña")
-    let p2 = altaPersona("Marcos", "marcos02", "contraseña2")
+    let persona1 = altaPersona("carolain", "caro", "contraseña")
+    let persona2 = altaPersona("Marcos", "marcos02", "contraseña2")
+    let persona3 = altaPersona("Romina", "romi", "romi12")
+    let persona4 = altaPersona("Marcos", "marcos", "contraseña2")
+    let persona5 = altaPersona("Maximiliano", "maxi", "Maxi22")
+    let persona6 = altaPersona("Marcos", "marcos02", "Marcos1")
+    let persona7 = altaPersona("rodri", "rodri", "Rodri12")
 
-    let r1 = altaReserva("persona", "local", "3", "pendiente")
-    let r2 = altaReserva("persona", "local", "2", "pendiente")
-    let r3 = altaReserva("persona", "local", "1", "pendiente")
-                       //nomb,                usu,           contra           tipo       direcc                                                          cupos   foto        estado            
-    let l1 = altaLocal("america", "america", "america", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
-    let a2 = altaLocal("rumbabar", "rumbabar", "rumbabar", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "3", "rumba.jpg", "true")
-    let a3 = altaLocal("sofitel Athens airport", "sofitel", "sofi", "restaurante", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "3", "sofitel.jpg", "true")
-    let a4 = altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
+    let reserva1 = altaReserva("persona", "local", "3", "pendiente")
+    let reserva2 = altaReserva("persona", "local", "2", "pendiente")
+    let reserva3 = altaReserva("persona", "local", "1", "pendiente")
+
+    let local1 = altaLocal("museo de la memoria", "museomemoria", "memoria452", "museo", " Av. de las Instrucciones 1057, 12900 Montevideo, Departamento de Montevideo", "40", "memoria.jpg", "true")
+    let local2 = altaLocal("blanes", "blanes", "blanes123", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
+    let local3 = altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
+    let local4 = altaLocal("galpon", "galpon", "teatrogal1", "teatro", " Av. 18 de Julio 1618, 11200 Montevideo, Departamento de Montevideo", "5", "galpon.jpg", "true")
+    let local5  = altaLocal("Hard rock café", "hard", "hard22", "restaurante", "Rbla. Armenia 1624, 11300 Montevideo", "15", "hard.jpg","true" )
+    let local6 = altaLocal("rumba bar", "rumba", "rumbabar122", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "10", "rumba.jpg", "true")
+    let local7 = altaLocal("Mc donals", "mcdonals", "cajitafeliz", "restaurante", "Bv. Gral. Artigas 1504 ·", "17", "mcdonals.webp", "true")
+   
+    let local8 = altaLocal("sofitel Athens airport", "sofitel", "sofi", "hotel", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "30", "sofitel.jpg", "true")
+ 
 }
 
 function altaPersona(nombre, usuario, contraseña) {
@@ -33,7 +44,7 @@ function altaReserva(nombre, estado, cupos, promedio) {
     }
     return reserva;
 }
-
+//estado tru del lñocal boton no disabled
 function altaLocal(nombre, usuario, contraseña, tipo, direccion, cupomax, foto, estado) {
     let local = " ";
     if (nombre != " " & usuario != " " & contraseña != " " & tipo != " " & direccion != " " && cupomax != " " && foto != " " && estado != " ") {
