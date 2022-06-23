@@ -4,14 +4,14 @@ function Precargar() {
     let p1 = altaPersona("carolain", "caro", "contraseña")
     let p2 = altaPersona("Marcos", "marcos02", "contraseña2")
 
-    let r1 = altaReserva("persona", "local", "3", "estao")
-    let r2 = altaReserva("persona", "local", "2", "estao")
-    let r3 = altaReserva("persona", "local", "1", "estao")
+    let r1 = altaReserva("persona", "local", "3", "pendiente")
+    let r2 = altaReserva("persona", "local", "2", "pendiente")
+    let r3 = altaReserva("persona", "local", "1", "pendiente")
 
-    let l1 = altaLocal("Museo america", "museodeamerica", "contraeñaamerica", "Museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg")
-    let a2 = altaLocal("Rumba bar", "rumbabar", "contraseñaderumba", "Restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "3", "rumba.jpg")
-    let a3 = altaLocal("Sofitel Athens Airport", "sofitel", "sofi", "Restaurante", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "3", "sofitel.jpg")
-    let a4 = altaLocal("Solis", "museos", "solis", "Teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp")
+    let l1 = altaLocal("museo america", "museodeamerica", "contraeñaamerica", "museo", "Av. Millán 4015, 11700 Montevideo, Departamento de Montevideo", "3", "blanes.jpg", "true")
+    let a2 = altaLocal("rumbabar", "rumbabar", "rumbabar", "restaurante", "Dr. Héctor Miranda 2427, 11300 Montevideo, Departamento de Montevideo", "3", "rumba.jpg", "true")
+    let a3 = altaLocal("sofitel Athens airport", "sofitel", "sofi", "restaurante", "Rambla Republica de Mexico s/n, Carrasco, 11500 Montevideo, Uruguay", "3", "sofitel.jpg", "true")
+    let a4 = altaLocal("solis", "museos", "solis", "teatro", "Buenos Aires s/n esquina Bartolomé Mitre. 1950 3323", "3", "solis.webp", "true")
 }
 
 function altaPersona(nombre, usuario, contraseña) {
@@ -34,10 +34,10 @@ function altaReserva(nombre, estado, cupos, promedio) {
     return reserva;
 }
 
-function altaLocal(nombre, usuario, contraseña, tipo, direccion, cupomax, foto) {
+function altaLocal(nombre, usuario, contraseña, tipo, direccion, cupomax, foto, estado) {
     let local = " ";
-    if (nombre != " " & usuario != " " & contraseña != " " & tipo != " " & direccion != " " && cupomax != " " && foto != " ") {
-        let nuevoLocal = new Local(nombre, usuario, contraseña, tipo, direccion, cupomax, foto)
+    if (nombre != " " & usuario != " " & contraseña != " " & tipo != " " & direccion != " " && cupomax != " " && foto != " " && estado != " ") {
+        let nuevoLocal = new Local(nombre, usuario, contraseña, tipo, direccion, cupomax, foto, estado)
         local = nuevoLocal;
         arrayLocal.push(local)
     }
@@ -74,6 +74,11 @@ function verLocales() {
     let losBotones = document.querySelectorAll(".btn-reservas");
     for (let button of losBotones) {
         button.addEventListener("click", guardarReserva)
+        for (res of arrayReservas){
+            if (res.estado != "pendiente"){
+                button.disabled = true;
+            }
+        }
     }
 }
 verLocales()

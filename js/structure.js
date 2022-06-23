@@ -22,7 +22,7 @@ let userLogin = null;
 
 let ultimoIdLocal = 1;
 class Local {
-  constructor(nombre, usuario, contraseña, tipo, direccion,cupomax, foto) {
+  constructor(nombre, usuario, contraseña, tipo, direccion,cupomax, foto, estado) {
     //el id no lo muestro ene l constructor porque no viene de afuera, ya se genera automaticamente.
     this.id = ultimoIdLocal;
     ultimoIdLocal++;
@@ -31,8 +31,8 @@ class Local {
     this.contraseña = contraseña;
     this.tipo = tipo;
     this.direccion = direccion;
-    this.foto = foto;
     this.cupomax = cupomax ;  
+    this.foto = foto;
     this.estado = true; //habilitado o desabilotado, pero siempre por ahora lo vamos a habiltar
 }
 }

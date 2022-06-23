@@ -5,7 +5,7 @@ function login() {
 }
 
 function eventsLogin() {
-  let usu = document.querySelector("#txt-usuario").value;
+  let usu = document.querySelector("#txt-usuarioLogin").value;
   let usuario = usu.toLowerCase();
   let password = document.querySelector("#txt-passwordLogin").value;
   let encontrado = verificarExiste(usuario, password);
