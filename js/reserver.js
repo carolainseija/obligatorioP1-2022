@@ -65,10 +65,6 @@ function mostrarEnReservas() {
 </div>
 </div>`
 
-
-
-
-
             //ver esto porque ya esta debajo
             let botoneslim = document.querySelector("#botones-reservas")
             if (reserva.estado == "Cancelada") {

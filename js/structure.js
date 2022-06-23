@@ -3,6 +3,7 @@ let arrayReservas = [];
 let arrayLocal = [];
 
 let classContent = document.querySelector("#contentUser").classList;
+let classContentLocal = document.querySelector("#contentLocal").classList;
 let classNavUsuario = document.querySelector("#nav-usuario").classList;
 let textoUsuario = document.querySelector("#texto-usuario");
 let classNav = document.querySelector("#nav-botones").classList;

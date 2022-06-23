@@ -30,7 +30,7 @@ function verificarExiste(name, password) {
         if (persona.nombre == name && persona.contraseña == password) {
             console.log("per.nom", persona.nombre)
             console.log("name", name)
-            //una pocicion del array es igual a esta que declaraste en el input
+            //una pocicion del array es igual a esta que declaraste en el input"
             userencontrado = persona;
         }
     }
@@ -40,9 +40,29 @@ function verificarExiste(name, password) {
             console.log("per.nom", local.nombre)
             //una pocicion del array es igual a esta que declaraste en el input
             userencontrado = local;
+            
         }
     }
     return userencontrado;
+}
+
+let userType = null;
+function verificarType(name, password) {
+    for (let persona of arrayPersonas) {
+        //si encuentro que Array persona tiene person.name
+        if (persona.nombre == name && persona.contraseña == password) {
+            //una pocicion del array es igual a esta que declaraste en el input"
+            userType = "persona";
+        }
+    }
+    for (let local of arrayLocal) {
+        //si encuentro que Array persona tiene person.name
+        if (local.nombre == name && local.contraseña == password) {
+            //una pocicion del array es igual a esta que declaraste en el input
+            userType = "local";
+        }
+    }
+    return userType;
 }
 
 
